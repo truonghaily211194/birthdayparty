@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – Blow Birthday Candle</title>
+<style>
+  :root { color-scheme: light dark; --fg:#2b2530; --fg2:#6a6070; --bg:#fbf7f4; --card:#ffffff; --accent:#5c82ff; --line:#e9e1dc; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#f2eef0; --fg2:#b3a9ad; --bg:#1b1719; --card:#2f2a2e; --line:#3d363a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; color:var(--fg); background:var(--bg); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom: 8px; }
+  h1 { font-size: 28px; margin: 0; }
+  .meta { color: var(--fg2); font-size: 14px; margin: 4px 0 24px; }
+  select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--fg); }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; margin: 12px 0; }
+  h2 { font-size: 18px; margin: 0 0 8px; }
+  p { margin: 0 0 8px; white-space: pre-line; }
+  a { color: var(--accent); }
+  footer { color: var(--fg2); font-size: 13px; margin-top: 28px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="title">Privacy Policy</h1>
+    <select id="lang" aria-label="Language"></select>
+  </header>
+  <div class="meta" id="meta"></div>
+  <div id="content"></div>
+  <footer>Blow Birthday Candle · <a href="mailto:haily.211194@gmail.com">haily.211194@gmail.com</a> · <a id="terms-link" href="terms.html">Terms of Use</a></footer>
+</div>
+<script>
+// Ngôn ngữ hiển thị: ?lang=xx (app truyền) → navigator.languages → en.
+const APP = "Blow Birthday Candle";
+const EMAIL = "haily.211194@gmail.com";
+const UPDATED = "2026-09-12";
+const T = {
+en: { name:"English", title:"Privacy Policy", updated:"Last updated", terms:"Terms of Use", s:[
+ ["1. Overview", `${APP} ("the App") is developed by Ly Truong. This policy explains what information the App handles and how. We do not require an account and we do not sell your data.`],
+ ["2. Information stored on your device", `The name you enter, your chosen cake, colors, music and other settings are stored only on your device. They are never sent to us. Deleting the App removes them.`],
+ ["3. Microphone", `The App uses the microphone only to detect when you blow to put out the candle. Audio is analyzed in real time on your device to measure loudness. It is never recorded, saved or transmitted anywhere.`],
+ ["4. Advertising", `The App shows ads through Google AdMob (banner, interstitial, app-open and rewarded ads). AdMob may collect your device's advertising identifier and technical data to show personalized or non-personalized ads, according to your choices: the App Tracking Transparency prompt on iOS and the consent form (Google UMP) in the EEA, UK and Switzerland. See Google's policy: https://policies.google.com/technologies/ads. Purchasing "Remove Ads" turns off all ads and the ad SDK is no longer initialized.`],
+ ["5. In-app purchase", `"Remove Ads" is a one-time purchase processed by Apple App Store or Google Play. We never see your payment details. Your purchase status is stored on your device and can be restored with "Restore purchases".`],
+ ["6. Children", `The App is not directed to children under 13 and we do not knowingly collect personal information from children. Where required, ads are configured accordingly.`],
+ ["7. Sharing and retention", `We do not sell or share personal data, except that Google AdMob processes advertising data as described above under its own policy. We keep no server-side data about you.`],
+ ["8. Your choices", `You can withdraw ad tracking permission in your device settings (iOS: Settings → Privacy & Security → Tracking), reset your advertising identifier, or change your consent in the App's ad consent form where available. Buying "Remove Ads" stops all advertising.`],
+ ["9. Changes and contact", `We may update this policy; the date above shows the latest version. Questions: ${EMAIL}.`]]},
+vi: { name:"Tiếng Việt", title:"Chính sách bảo mật", updated:"Cập nhật lần cuối", terms:"Điều khoản sử dụng", s:[
+ ["1. Tổng quan", `${APP} ("Ứng dụng") do Ly Truong phát triển. Chính sách này giải thích Ứng dụng xử lý thông tin gì và như thế nào. Ứng dụng không yêu cầu tài khoản và chúng tôi không bán dữ liệu của bạn.`],
+ ["2. Thông tin lưu trên thiết bị", `Tên bạn nhập, mẫu bánh, màu sắc, nhạc và các cài đặt khác chỉ được lưu trên thiết bị của bạn, không bao giờ gửi về chúng tôi. Xoá Ứng dụng sẽ xoá các dữ liệu này.`],
+ ["3. Micrô", `Ứng dụng chỉ dùng micrô để nhận biết bạn thổi tắt nến. Âm thanh được phân tích tức thời ngay trên thiết bị để đo độ lớn, không bao giờ được ghi lại, lưu trữ hay truyền đi đâu.`],
+ ["4. Quảng cáo", `Ứng dụng hiển thị quảng cáo qua Google AdMob (banner, xen kẽ, khi mở app và quảng cáo có thưởng). AdMob có thể thu thập mã định danh quảng cáo và dữ liệu kỹ thuật của thiết bị để hiện quảng cáo cá nhân hoá hoặc không cá nhân hoá, theo lựa chọn của bạn: hộp thoại App Tracking Transparency trên iOS và biểu mẫu đồng ý (Google UMP) tại EU, Anh và Thuỵ Sĩ. Xem chính sách của Google: https://policies.google.com/technologies/ads. Mua "Gỡ quảng cáo" sẽ tắt toàn bộ quảng cáo và SDK quảng cáo không còn được khởi tạo.`],
+ ["5. Mua trong ứng dụng", `"Gỡ quảng cáo" là giao dịch mua một lần, do Apple App Store hoặc Google Play xử lý. Chúng tôi không nhìn thấy thông tin thanh toán của bạn. Trạng thái đã mua lưu trên thiết bị và có thể lấy lại bằng "Khôi phục mua hàng".`],
+ ["6. Trẻ em", `Ứng dụng không hướng tới trẻ em dưới 13 tuổi và chúng tôi không cố ý thu thập thông tin cá nhân của trẻ em. Quảng cáo được cấu hình phù hợp ở nơi pháp luật yêu cầu.`],
+ ["7. Chia sẻ và lưu giữ", `Chúng tôi không bán hay chia sẻ dữ liệu cá nhân, ngoại trừ Google AdMob xử lý dữ liệu quảng cáo như mô tả ở trên theo chính sách riêng của họ. Chúng tôi không lưu dữ liệu nào về bạn trên máy chủ.`],
+ ["8. Lựa chọn của bạn", `Bạn có thể rút quyền theo dõi quảng cáo trong cài đặt thiết bị (iOS: Cài đặt → Quyền riêng tư & Bảo mật → Theo dõi), đặt lại mã định danh quảng cáo, hoặc đổi lựa chọn đồng ý trong biểu mẫu của Ứng dụng nơi có sẵn. Mua "Gỡ quảng cáo" sẽ dừng toàn bộ quảng cáo.`],
+ ["9. Thay đổi và liên hệ", `Chúng tôi có thể cập nhật chính sách này; ngày ở trên là phiên bản mới nhất. Thắc mắc: ${EMAIL}.`]]},
+ja: { name:"日本語", title:"プライバシーポリシー", updated:"最終更新", terms:"利用規約", s:[
+ ["1. 概要", `${APP}（以下「本アプリ」）はLy Truongが開発しています。本ポリシーは本アプリが扱う情報とその方法を説明します。アカウントは不要で、データを販売することはありません。`],
+ ["2. 端末に保存される情報", `入力した名前、選んだケーキ、色、音楽などの設定は端末内のみに保存され、当方へ送信されることはありません。アプリを削除すると消去されます。`],
+ ["3. マイク", `マイクはろうそくを吹き消す動作を検出するためだけに使用します。音声は端末上でリアルタイムに音量として解析され、録音・保存・送信は一切行いません。`],
+ ["4. 広告", `本アプリはGoogle AdMob（バナー、インタースティシャル、アプリ起動時、リワード広告）を表示します。AdMobは、iOSのApp Tracking Transparencyの選択やEEA・英国・スイスでの同意フォーム（Google UMP）に従い、広告識別子や技術情報を収集してパーソナライズ広告または非パーソナライズ広告を表示する場合があります。Googleのポリシー: https://policies.google.com/technologies/ads 。「広告を削除」を購入するとすべての広告が停止し、広告SDKは初期化されません。`],
+ ["5. アプリ内課金", `「広告を削除」はApple App StoreまたはGoogle Playが処理する一回限りの購入です。支払い情報を当方が閲覧することはありません。購入状態は端末に保存され「購入を復元」で戻せます。`],
+ ["6. 子ども", `本アプリは13歳未満の子どもを対象としておらず、子どもの個人情報を故意に収集しません。必要な地域では広告設定を適切に行います。`],
+ ["7. 共有と保持", `個人データを販売・共有することはありません。ただしGoogle AdMobは上記のとおり自社ポリシーに基づき広告データを処理します。当方はサーバー上にお客様のデータを保持しません。`],
+ ["8. 選択肢", `端末設定（iOS: 設定 → プライバシーとセキュリティ → トラッキング）で追跡許可を取り消す、広告識別子をリセットする、または同意フォームで同意内容を変更できます。「広告を削除」の購入で広告は停止します。`],
+ ["9. 変更と連絡先", `本ポリシーは更新される場合があり、上記日付が最新版です。お問い合わせ: ${EMAIL}`]]},
+ko: { name:"한국어", title:"개인정보 처리방침", updated:"최종 업데이트", terms:"이용약관", s:[
+ ["1. 개요", `${APP}(이하 "앱")은 Ly Truong이 개발했습니다. 이 방침은 앱이 어떤 정보를 어떻게 처리하는지 설명합니다. 계정이 필요하지 않으며 데이터를 판매하지 않습니다.`],
+ ["2. 기기에 저장되는 정보", `입력한 이름, 선택한 케이크, 색상, 음악 등 설정은 기기에만 저장되며 당사로 전송되지 않습니다. 앱을 삭제하면 함께 삭제됩니다.`],
+ ["3. 마이크", `마이크는 촛불을 불어 끄는 동작을 감지하는 데만 사용됩니다. 소리는 기기에서 실시간으로 음량만 분석되며 녹음·저장·전송되지 않습니다.`],
+ ["4. 광고", `앱은 Google AdMob(배너, 전면, 앱 열기, 보상형 광고)을 표시합니다. AdMob은 iOS의 앱 추적 투명성 선택과 EEA·영국·스위스의 동의 양식(Google UMP)에 따라 광고 식별자와 기술 정보를 수집하여 맞춤 또는 비맞춤 광고를 표시할 수 있습니다. Google 정책: https://policies.google.com/technologies/ads. "광고 제거"를 구매하면 모든 광고가 꺼지고 광고 SDK가 초기화되지 않습니다.`],
+ ["5. 인앱 구매", `"광고 제거"는 Apple App Store 또는 Google Play가 처리하는 1회 구매입니다. 당사는 결제 정보를 볼 수 없습니다. 구매 상태는 기기에 저장되며 "구매 복원"으로 복원할 수 있습니다.`],
+ ["6. 어린이", `앱은 13세 미만 어린이를 대상으로 하지 않으며 어린이의 개인정보를 의도적으로 수집하지 않습니다.`],
+ ["7. 공유 및 보관", `개인 데이터를 판매하거나 공유하지 않습니다. 단, Google AdMob은 자체 정책에 따라 광고 데이터를 처리합니다. 당사는 서버에 사용자 데이터를 보관하지 않습니다.`],
+ ["8. 선택", `기기 설정(iOS: 설정 → 개인정보 보호 및 보안 → 추적)에서 추적 권한을 철회하거나 광고 식별자를 재설정하거나 동의 양식에서 선택을 변경할 수 있습니다. "광고 제거" 구매 시 모든 광고가 중단됩니다.`],
+ ["9. 변경 및 문의", `이 방침은 업데이트될 수 있으며 위 날짜가 최신 버전입니다. 문의: ${EMAIL}`]]},
+zh: { name:"中文", title:"隐私政策", updated:"最后更新", terms:"使用条款", s:[
+ ["1. 概述", `${APP}（“本应用”）由 Ly Truong 开发。本政策说明本应用处理哪些信息及方式。无需账户，我们不出售您的数据。`],
+ ["2. 保存在设备上的信息", `您输入的名字、所选蛋糕、颜色、音乐及其他设置仅保存在您的设备上，不会发送给我们。删除应用即删除这些数据。`],
+ ["3. 麦克风", `麦克风仅用于检测您吹灭蜡烛的动作。音频在设备上实时分析音量，绝不录制、保存或传输。`],
+ ["4. 广告", `本应用通过 Google AdMob 展示广告（横幅、插页、开屏和激励广告）。AdMob 可能根据您的选择（iOS 的 App Tracking Transparency 提示，以及欧洲经济区、英国和瑞士的同意表单 Google UMP）收集广告标识符和技术数据，以展示个性化或非个性化广告。Google 政策：https://policies.google.com/technologies/ads。购买“移除广告”后所有广告关闭，广告 SDK 不再初始化。`],
+ ["5. 应用内购买", `“移除广告”为一次性购买，由 Apple App Store 或 Google Play 处理。我们看不到您的支付信息。购买状态保存在设备上，可通过“恢复购买”恢复。`],
+ ["6. 儿童", `本应用不面向 13 岁以下儿童，我们不会故意收集儿童个人信息。`],
+ ["7. 共享与保留", `我们不出售或共享个人数据，Google AdMob 按其政策处理广告数据除外。我们不在服务器上保存您的任何数据。`],
+ ["8. 您的选择", `您可在设备设置中撤回追踪权限（iOS：设置 → 隐私与安全性 → 跟踪）、重置广告标识符，或在同意表单中更改选择。购买“移除广告”将停止所有广告。`],
+ ["9. 变更与联系", `本政策可能更新，以上日期为最新版本。联系：${EMAIL}`]]},
+es: { name:"Español", title:"Política de privacidad", updated:"Última actualización", terms:"Términos de uso", s:[
+ ["1. Resumen", `${APP} («la App») es desarrollada por Ly Truong. Esta política explica qué información maneja la App y cómo. No requiere cuenta y no vendemos tus datos.`],
+ ["2. Información guardada en tu dispositivo", `El nombre que escribes, el pastel elegido, colores, música y demás ajustes se guardan solo en tu dispositivo y nunca se nos envían. Al borrar la App se eliminan.`],
+ ["3. Micrófono", `El micrófono se usa solo para detectar cuándo soplas para apagar la vela. El audio se analiza en tiempo real en tu dispositivo para medir el volumen; nunca se graba, guarda ni transmite.`],
+ ["4. Publicidad", `La App muestra anuncios mediante Google AdMob (banner, intersticial, de apertura y recompensados). AdMob puede recopilar el identificador de publicidad y datos técnicos para mostrar anuncios personalizados o no, según tus elecciones: el aviso App Tracking Transparency en iOS y el formulario de consentimiento (Google UMP) en el EEE, Reino Unido y Suiza. Política de Google: https://policies.google.com/technologies/ads. Al comprar «Quitar anuncios» se desactivan todos los anuncios y el SDK no se inicializa.`],
+ ["5. Compra dentro de la app", `«Quitar anuncios» es una compra única procesada por Apple App Store o Google Play. Nunca vemos tus datos de pago. El estado de compra se guarda en tu dispositivo y puede recuperarse con «Restaurar compras».`],
+ ["6. Menores", `La App no está dirigida a menores de 13 años y no recopilamos a sabiendas información personal de menores.`],
+ ["7. Compartición y conservación", `No vendemos ni compartimos datos personales, salvo que Google AdMob trata datos publicitarios según su propia política. No conservamos datos tuyos en servidores.`],
+ ["8. Tus opciones", `Puedes retirar el permiso de seguimiento en los ajustes del dispositivo (iOS: Ajustes → Privacidad y seguridad → Rastreo), restablecer el identificador de publicidad o cambiar tu consentimiento en el formulario de la App. Comprar «Quitar anuncios» detiene toda la publicidad.`],
+ ["9. Cambios y contacto", `Podemos actualizar esta política; la fecha indica la versión vigente. Contacto: ${EMAIL}`]]},
+pt: { name:"Português", title:"Política de Privacidade", updated:"Última atualização", terms:"Termos de Uso", s:[
+ ["1. Visão geral", `${APP} («o App») é desenvolvido por Ly Truong. Esta política explica quais informações o App trata e como. Não exige conta e não vendemos seus dados.`],
+ ["2. Informações guardadas no seu dispositivo", `O nome digitado, o bolo escolhido, cores, música e outras configurações ficam apenas no seu dispositivo e nunca são enviados para nós. Apagar o App remove esses dados.`],
+ ["3. Microfone", `O microfone é usado apenas para detectar quando você sopra para apagar a vela. O áudio é analisado em tempo real no dispositivo para medir o volume; nunca é gravado, salvo ou transmitido.`],
+ ["4. Publicidade", `O App exibe anúncios via Google AdMob (banner, intersticial, de abertura e recompensados). O AdMob pode coletar o identificador de publicidade e dados técnicos para exibir anúncios personalizados ou não, conforme suas escolhas: o aviso App Tracking Transparency no iOS e o formulário de consentimento (Google UMP) no EEE, Reino Unido e Suíça. Política do Google: https://policies.google.com/technologies/ads. Ao comprar «Remover anúncios», todos os anúncios são desativados.`],
+ ["5. Compra no app", `«Remover anúncios» é uma compra única processada pela Apple App Store ou Google Play. Não temos acesso aos seus dados de pagamento. O status fica salvo no dispositivo e pode ser recuperado em «Restaurar compras».`],
+ ["6. Crianças", `O App não se destina a menores de 13 anos e não coletamos intencionalmente dados pessoais de crianças.`],
+ ["7. Compartilhamento e retenção", `Não vendemos nem compartilhamos dados pessoais, exceto pelo tratamento de dados publicitários pelo Google AdMob conforme sua própria política. Não mantemos dados seus em servidores.`],
+ ["8. Suas escolhas", `Você pode revogar a permissão de rastreamento nas configurações do dispositivo (iOS: Ajustes → Privacidade e Segurança → Rastreamento), redefinir o identificador de publicidade ou alterar o consentimento no formulário do App. Comprar «Remover anúncios» encerra toda a publicidade.`],
+ ["9. Alterações e contato", `Podemos atualizar esta política; a data acima indica a versão atual. Contato: ${EMAIL}`]]},
+fr: { name:"Français", title:"Politique de confidentialité", updated:"Dernière mise à jour", terms:"Conditions d'utilisation", s:[
+ ["1. Aperçu", `${APP} (« l'App ») est développée par Ly Truong. Cette politique explique quelles informations l'App traite et comment. Aucun compte n'est requis et nous ne vendons pas vos données.`],
+ ["2. Informations stockées sur votre appareil", `Le nom saisi, le gâteau choisi, les couleurs, la musique et les autres réglages sont stockés uniquement sur votre appareil et ne nous sont jamais envoyés. Supprimer l'App les efface.`],
+ ["3. Microphone", `Le micro sert uniquement à détecter votre souffle pour éteindre la bougie. Le son est analysé en temps réel sur l'appareil pour mesurer le volume ; il n'est jamais enregistré, conservé ni transmis.`],
+ ["4. Publicité", `L'App affiche des publicités via Google AdMob (bannière, interstitiel, ouverture d'app et récompensées). AdMob peut collecter l'identifiant publicitaire et des données techniques pour afficher des publicités personnalisées ou non, selon vos choix : l'invite App Tracking Transparency sur iOS et le formulaire de consentement (Google UMP) dans l'EEE, au Royaume-Uni et en Suisse. Politique Google : https://policies.google.com/technologies/ads. L'achat « Supprimer les pubs » désactive toutes les publicités.`],
+ ["5. Achat intégré", `« Supprimer les pubs » est un achat unique traité par l'App Store d'Apple ou Google Play. Nous ne voyons jamais vos données de paiement. L'état d'achat est stocké sur l'appareil et récupérable via « Restaurer les achats ».`],
+ ["6. Enfants", `L'App ne s'adresse pas aux enfants de moins de 13 ans et nous ne collectons pas sciemment leurs données personnelles.`],
+ ["7. Partage et conservation", `Nous ne vendons ni ne partageons de données personnelles, hormis le traitement des données publicitaires par Google AdMob selon sa propre politique. Nous ne conservons aucune donnée vous concernant sur un serveur.`],
+ ["8. Vos choix", `Vous pouvez retirer l'autorisation de suivi dans les réglages de l'appareil (iOS : Réglages → Confidentialité et sécurité → Suivi), réinitialiser l'identifiant publicitaire ou modifier votre consentement dans le formulaire de l'App. L'achat « Supprimer les pubs » met fin à toute publicité.`],
+ ["9. Modifications et contact", `Cette politique peut évoluer ; la date ci-dessus indique la version en vigueur. Contact : ${EMAIL}`]]},
+de: { name:"Deutsch", title:"Datenschutzerklärung", updated:"Zuletzt aktualisiert", terms:"Nutzungsbedingungen", s:[
+ ["1. Überblick", `${APP} („die App“) wird von Ly Truong entwickelt. Diese Erklärung beschreibt, welche Informationen die App verarbeitet und wie. Es ist kein Konto nötig, und wir verkaufen keine Daten.`],
+ ["2. Auf dem Gerät gespeicherte Informationen", `Der eingegebene Name, die gewählte Torte, Farben, Musik und weitere Einstellungen werden nur auf Ihrem Gerät gespeichert und nie an uns gesendet. Beim Löschen der App werden sie entfernt.`],
+ ["3. Mikrofon", `Das Mikrofon dient nur dazu, das Ausblasen der Kerze zu erkennen. Audio wird in Echtzeit auf dem Gerät auf Lautstärke analysiert und niemals aufgezeichnet, gespeichert oder übertragen.`],
+ ["4. Werbung", `Die App zeigt Werbung über Google AdMob (Banner, Interstitial, App-Open und Rewarded). AdMob kann die Werbe-ID und technische Daten erheben, um personalisierte oder nicht personalisierte Werbung anzuzeigen – gemäß Ihrer Wahl in der App-Tracking-Transparency-Abfrage (iOS) und dem Einwilligungsformular (Google UMP) im EWR, UK und der Schweiz. Google-Richtlinie: https://policies.google.com/technologies/ads. Mit dem Kauf „Werbung entfernen“ wird jede Werbung deaktiviert.`],
+ ["5. In-App-Kauf", `„Werbung entfernen“ ist ein Einmalkauf über den Apple App Store oder Google Play. Wir sehen Ihre Zahlungsdaten nie. Der Kaufstatus wird auf dem Gerät gespeichert und kann über „Käufe wiederherstellen“ zurückgeholt werden.`],
+ ["6. Kinder", `Die App richtet sich nicht an Kinder unter 13 Jahren; wir erheben wissentlich keine personenbezogenen Daten von Kindern.`],
+ ["7. Weitergabe und Speicherung", `Wir verkaufen oder teilen keine personenbezogenen Daten; Google AdMob verarbeitet Werbedaten gemäß eigener Richtlinie. Wir speichern keine Daten über Sie auf Servern.`],
+ ["8. Ihre Wahlmöglichkeiten", `Sie können die Tracking-Erlaubnis in den Geräteeinstellungen widerrufen (iOS: Einstellungen → Datenschutz & Sicherheit → Tracking), die Werbe-ID zurücksetzen oder Ihre Einwilligung im Formular der App ändern. Der Kauf „Werbung entfernen“ beendet jede Werbung.`],
+ ["9. Änderungen und Kontakt", `Diese Erklärung kann aktualisiert werden; das Datum oben zeigt die aktuelle Version. Kontakt: ${EMAIL}`]]},
+ru: { name:"Русский", title:"Политика конфиденциальности", updated:"Обновлено", terms:"Условия использования", s:[
+ ["1. Обзор", `${APP} («Приложение») разработано Ly Truong. Эта политика объясняет, какие данные обрабатывает Приложение и как. Аккаунт не требуется, данные не продаются.`],
+ ["2. Данные на устройстве", `Введённое имя, выбранный торт, цвета, музыка и другие настройки хранятся только на вашем устройстве и не передаются нам. Удаление Приложения удаляет их.`],
+ ["3. Микрофон", `Микрофон используется только для распознавания вашего выдоха, гасящего свечу. Звук анализируется в реальном времени на устройстве для измерения громкости и никогда не записывается, не сохраняется и не передаётся.`],
+ ["4. Реклама", `Приложение показывает рекламу через Google AdMob (баннеры, межстраничная, при открытии и с вознаграждением). AdMob может собирать рекламный идентификатор и технические данные для персонализированной или неперсонализированной рекламы согласно вашему выбору: запрос App Tracking Transparency в iOS и форма согласия (Google UMP) в ЕЭЗ, Великобритании и Швейцарии. Политика Google: https://policies.google.com/technologies/ads. Покупка «Убрать рекламу» отключает всю рекламу.`],
+ ["5. Покупка в приложении", `«Убрать рекламу» — разовая покупка через Apple App Store или Google Play. Мы не видим ваших платёжных данных. Статус покупки хранится на устройстве и восстанавливается через «Восстановить покупки».`],
+ ["6. Дети", `Приложение не предназначено для детей младше 13 лет; мы сознательно не собираем их персональные данные.`],
+ ["7. Передача и хранение", `Мы не продаём и не передаём персональные данные, за исключением обработки рекламных данных Google AdMob по его политике. На серверах мы не храним ваши данные.`],
+ ["8. Ваш выбор", `Вы можете отозвать разрешение на отслеживание в настройках устройства (iOS: Настройки → Конфиденциальность и безопасность → Отслеживание), сбросить рекламный идентификатор или изменить согласие в форме Приложения. Покупка «Убрать рекламу» останавливает всю рекламу.`],
+ ["9. Изменения и контакты", `Политика может обновляться; дата выше — актуальная версия. Контакт: ${EMAIL}`]]},
+id: { name:"Bahasa Indonesia", title:"Kebijakan Privasi", updated:"Terakhir diperbarui", terms:"Ketentuan Penggunaan", s:[
+ ["1. Ringkasan", `${APP} ("Aplikasi") dikembangkan oleh Ly Truong. Kebijakan ini menjelaskan informasi apa yang ditangani Aplikasi dan caranya. Tidak perlu akun dan kami tidak menjual data Anda.`],
+ ["2. Informasi yang disimpan di perangkat", `Nama yang Anda masukkan, kue pilihan, warna, musik, dan pengaturan lain hanya disimpan di perangkat Anda dan tidak pernah dikirim ke kami. Menghapus Aplikasi akan menghapusnya.`],
+ ["3. Mikrofon", `Mikrofon hanya dipakai untuk mendeteksi tiupan Anda saat memadamkan lilin. Audio dianalisis secara real-time di perangkat untuk mengukur volume; tidak pernah direkam, disimpan, atau dikirim.`],
+ ["4. Iklan", `Aplikasi menampilkan iklan melalui Google AdMob (banner, interstisial, pembuka aplikasi, dan berhadiah). AdMob dapat mengumpulkan ID iklan dan data teknis untuk iklan yang dipersonalisasi atau tidak, sesuai pilihan Anda: dialog App Tracking Transparency di iOS dan formulir persetujuan (Google UMP) di EEA, Inggris, dan Swiss. Kebijakan Google: https://policies.google.com/technologies/ads. Membeli "Hapus Iklan" mematikan semua iklan.`],
+ ["5. Pembelian dalam aplikasi", `"Hapus Iklan" adalah pembelian sekali bayar yang diproses Apple App Store atau Google Play. Kami tidak melihat data pembayaran Anda. Status pembelian disimpan di perangkat dan dapat dipulihkan lewat "Pulihkan pembelian".`],
+ ["6. Anak-anak", `Aplikasi tidak ditujukan untuk anak di bawah 13 tahun dan kami tidak sengaja mengumpulkan data pribadi anak.`],
+ ["7. Pembagian dan penyimpanan", `Kami tidak menjual atau membagikan data pribadi, kecuali Google AdMob memproses data iklan sesuai kebijakannya. Kami tidak menyimpan data Anda di server.`],
+ ["8. Pilihan Anda", `Anda dapat mencabut izin pelacakan di pengaturan perangkat (iOS: Pengaturan → Privasi & Keamanan → Pelacakan), mengatur ulang ID iklan, atau mengubah persetujuan di formulir Aplikasi. Membeli "Hapus Iklan" menghentikan semua iklan.`],
+ ["9. Perubahan dan kontak", `Kebijakan ini dapat diperbarui; tanggal di atas adalah versi terbaru. Kontak: ${EMAIL}`]]},
+th: { name:"ไทย", title:"นโยบายความเป็นส่วนตัว", updated:"อัปเดตล่าสุด", terms:"ข้อกำหนดการใช้งาน", s:[
+ ["1. ภาพรวม", `${APP} ("แอป") พัฒนาโดย Ly Truong นโยบายนี้อธิบายว่าแอปจัดการข้อมูลใดและอย่างไร ไม่ต้องใช้บัญชี และเราไม่ขายข้อมูลของคุณ`],
+ ["2. ข้อมูลที่เก็บในอุปกรณ์", `ชื่อที่คุณกรอก เค้กที่เลือก สี เพลง และการตั้งค่าอื่น ๆ เก็บไว้ในอุปกรณ์ของคุณเท่านั้น ไม่ส่งมาให้เรา การลบแอปจะลบข้อมูลเหล่านี้`],
+ ["3. ไมโครโฟน", `ใช้ไมโครโฟนเพื่อตรวจจับการเป่าเทียนเท่านั้น เสียงถูกวิเคราะห์ระดับความดังแบบเรียลไทม์บนอุปกรณ์ ไม่มีการบันทึก จัดเก็บ หรือส่งออกไปที่ใด`],
+ ["4. โฆษณา", `แอปแสดงโฆษณาผ่าน Google AdMob (แบนเนอร์ เต็มจอ เปิดแอป และแบบมีรางวัล) AdMob อาจเก็บรหัสโฆษณาและข้อมูลทางเทคนิคเพื่อแสดงโฆษณาแบบปรับตามบุคคลหรือไม่ก็ได้ ตามตัวเลือกของคุณใน App Tracking Transparency บน iOS และแบบฟอร์มความยินยอม (Google UMP) ใน EEA สหราชอาณาจักร และสวิตเซอร์แลนด์ นโยบายของ Google: https://policies.google.com/technologies/ads การซื้อ "ลบโฆษณา" จะปิดโฆษณาทั้งหมด`],
+ ["5. การซื้อในแอป", `"ลบโฆษณา" เป็นการซื้อครั้งเดียว ดำเนินการโดย Apple App Store หรือ Google Play เราไม่เห็นข้อมูลการชำระเงินของคุณ สถานะการซื้อเก็บในอุปกรณ์และกู้คืนได้ด้วย "กู้คืนการซื้อ"`],
+ ["6. เด็ก", `แอปไม่ได้มุ่งเป้าไปที่เด็กอายุต่ำกว่า 13 ปี และเราไม่เก็บข้อมูลส่วนบุคคลของเด็กโดยเจตนา`],
+ ["7. การแบ่งปันและการเก็บรักษา", `เราไม่ขายหรือแบ่งปันข้อมูลส่วนบุคคล ยกเว้น Google AdMob ประมวลผลข้อมูลโฆษณาตามนโยบายของตน เราไม่เก็บข้อมูลของคุณบนเซิร์ฟเวอร์`],
+ ["8. ตัวเลือกของคุณ", `คุณสามารถถอนสิทธิ์การติดตามในการตั้งค่าอุปกรณ์ (iOS: การตั้งค่า → ความเป็นส่วนตัวและความปลอดภัย → การติดตาม) รีเซ็ตรหัสโฆษณา หรือเปลี่ยนความยินยอมในแบบฟอร์มของแอป การซื้อ "ลบโฆษณา" จะหยุดโฆษณาทั้งหมด`],
+ ["9. การเปลี่ยนแปลงและติดต่อ", `นโยบายนี้อาจมีการอัปเดต วันที่ด้านบนคือเวอร์ชันล่าสุด ติดต่อ: ${EMAIL}`]]},
+};
+function pickLang() {
+  const q = new URLSearchParams(location.search).get("lang");
+  const cands = [q, ...(navigator.languages || [navigator.language])].filter(Boolean);
+  for (const c of cands) { const k = c.toLowerCase().split(/[-_]/)[0]; if (T[k]) return k; }
+  return "en";
+}
+function render(k) {
+  const t = T[k]; document.documentElement.lang = k;
+  document.documentElement.dir = ["ar","he","fa","ur"].includes(k) ? "rtl" : "ltr";
+  document.title = t.title + " – " + APP;
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("meta").textContent = `${APP} · ${t.updated}: ${UPDATED}`;
+  document.getElementById("terms-link").textContent = t.terms;
+  document.getElementById("terms-link").href = "terms.html?lang=" + k;
+  document.getElementById("content").innerHTML = t.s.map(([h,p]) =>
+    `<section><h2>${h}</h2><p>${p.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')}</p></section>`).join("");
+  document.getElementById("lang").value = k;
+}
+const sel = document.getElementById("lang");
+for (const k of Object.keys(T)) { const o = document.createElement("option"); o.value = k; o.textContent = T[k].name; sel.appendChild(o); }
+sel.addEventListener("change", e => { render(e.target.value); history.replaceState(null, "", "?lang=" + e.target.value); });
+render(pickLang());
+</script>
+</body>
+</html>

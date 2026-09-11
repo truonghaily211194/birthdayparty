@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Use – Blow Birthday Candle</title>
+<style>
+  :root { color-scheme: light dark; --fg:#2b2530; --fg2:#6a6070; --bg:#fbf7f4; --card:#ffffff; --accent:#5c82ff; --line:#e9e1dc; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#f2eef0; --fg2:#b3a9ad; --bg:#1b1719; --card:#2f2a2e; --line:#3d363a; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; color:var(--fg); background:var(--bg); }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 64px; }
+  header { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-bottom: 8px; }
+  h1 { font-size: 28px; margin: 0; }
+  .meta { color: var(--fg2); font-size: 14px; margin: 4px 0 24px; }
+  select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--fg); }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; margin: 12px 0; }
+  h2 { font-size: 18px; margin: 0 0 8px; }
+  p { margin: 0 0 8px; white-space: pre-line; }
+  a { color: var(--accent); }
+  footer { color: var(--fg2); font-size: 13px; margin-top: 28px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1 id="title">Terms of Use</h1>
+    <select id="lang" aria-label="Language"></select>
+  </header>
+  <div class="meta" id="meta"></div>
+  <div id="content"></div>
+  <footer>Blow Birthday Candle · <a href="mailto:haily.211194@gmail.com">haily.211194@gmail.com</a> · <a id="privacy-link" href="privacy.html">Privacy Policy</a></footer>
+</div>
+<script>
+const APP = "Blow Birthday Candle";
+const EMAIL = "haily.211194@gmail.com";
+const UPDATED = "2026-09-12";
+const T = {
+en: { name:"English", title:"Terms of Use", updated:"Last updated", privacy:"Privacy Policy", s:[
+ ["1. Acceptance", `By downloading or using ${APP} ("the App"), developed by Ly Truong, you agree to these Terms. If you do not agree, please do not use the App.`],
+ ["2. License", `We grant you a personal, non-exclusive, non-transferable, revocable license to use the App on devices you own or control, for personal, non-commercial purposes, in accordance with the App Store or Google Play terms.`],
+ ["3. In-app purchase", `"Remove Ads" is a one-time, non-consumable purchase that removes all advertising and unlocks every cake theme. It is processed by Apple or Google under their terms; refunds are handled by them. You can restore it on other devices signed in with the same store account via "Restore purchases".`],
+ ["4. Advertising and rewarded ads", `The free version shows ads provided by Google AdMob. Some cake themes can be used by watching a rewarded ad; a theme stays unlocked while it is selected and locks again when you switch to another theme. Ad availability is not guaranteed and depends on your region and consent choices.`],
+ ["5. Acceptable use", `You may not copy, modify, distribute, reverse-engineer or resell the App or its content, use it in any unlawful way, or interfere with its ads and purchase mechanisms.`],
+ ["6. Content and intellectual property", `The App, its artwork, cake designs, fonts and music are owned by or licensed to Ly Truong. Names you enter remain yours and stay on your device.`],
+ ["7. Disclaimer", `The App is provided "as is" and "as available", without warranties of any kind. Candle detection depends on your device microphone and surroundings and may not always work as expected.`],
+ ["8. Limitation of liability", `To the maximum extent permitted by law, Ly Truong is not liable for any indirect, incidental or consequential damages arising from your use of the App. Our total liability shall not exceed the amount you paid for the App in the last 12 months.`],
+ ["9. Changes and termination", `We may update the App or these Terms at any time; continued use after changes means you accept them. We may suspend access if you breach these Terms.`],
+ ["10. Governing law and contact", `These Terms are governed by the laws of Vietnam, without prejudice to mandatory consumer protections in your country. Contact: ${EMAIL}.`]]},
+vi: { name:"Tiếng Việt", title:"Điều khoản sử dụng", updated:"Cập nhật lần cuối", privacy:"Chính sách bảo mật", s:[
+ ["1. Chấp thuận", `Khi tải hoặc sử dụng ${APP} ("Ứng dụng") do Ly Truong phát triển, bạn đồng ý với các Điều khoản này. Nếu không đồng ý, vui lòng không sử dụng Ứng dụng.`],
+ ["2. Giấy phép", `Bạn được cấp quyền cá nhân, không độc quyền, không chuyển nhượng và có thể bị thu hồi để dùng Ứng dụng trên thiết bị bạn sở hữu hoặc kiểm soát, cho mục đích cá nhân, phi thương mại, theo điều khoản của App Store hoặc Google Play.`],
+ ["3. Mua trong ứng dụng", `"Gỡ quảng cáo" là giao dịch mua một lần, không tiêu hao, gỡ toàn bộ quảng cáo và mở khoá mọi mẫu bánh. Giao dịch do Apple hoặc Google xử lý theo điều khoản của họ; hoàn tiền do họ giải quyết. Bạn có thể khôi phục trên thiết bị khác cùng tài khoản cửa hàng bằng "Khôi phục mua hàng".`],
+ ["4. Quảng cáo và quảng cáo có thưởng", `Bản miễn phí hiển thị quảng cáo do Google AdMob cung cấp. Một số mẫu bánh có thể dùng bằng cách xem quảng cáo có thưởng; mẫu bánh được mở khi đang được chọn và khoá lại khi bạn đổi sang mẫu khác. Không đảm bảo luôn có quảng cáo; điều này tuỳ khu vực và lựa chọn đồng ý của bạn.`],
+ ["5. Sử dụng hợp lệ", `Bạn không được sao chép, sửa đổi, phân phối, dịch ngược hay bán lại Ứng dụng hoặc nội dung của nó, dùng vào việc trái pháp luật, hoặc can thiệp vào cơ chế quảng cáo và mua hàng.`],
+ ["6. Nội dung và sở hữu trí tuệ", `Ứng dụng, hình ảnh, mẫu bánh, phông chữ và nhạc thuộc sở hữu hoặc được cấp phép cho Ly Truong. Tên bạn nhập vẫn thuộc về bạn và chỉ lưu trên thiết bị.`],
+ ["7. Miễn trừ", `Ứng dụng được cung cấp "nguyên trạng" và "tuỳ khả năng", không có bất kỳ bảo đảm nào. Việc nhận biết thổi nến phụ thuộc micrô và môi trường xung quanh, có thể không luôn hoạt động như mong đợi.`],
+ ["8. Giới hạn trách nhiệm", `Trong phạm vi pháp luật cho phép, Ly Truong không chịu trách nhiệm cho thiệt hại gián tiếp, ngẫu nhiên hay hệ quả phát sinh từ việc dùng Ứng dụng. Tổng trách nhiệm không vượt quá số tiền bạn đã trả cho Ứng dụng trong 12 tháng gần nhất.`],
+ ["9. Thay đổi và chấm dứt", `Chúng tôi có thể cập nhật Ứng dụng hoặc Điều khoản bất cứ lúc nào; tiếp tục sử dụng sau thay đổi nghĩa là bạn chấp thuận. Chúng tôi có thể tạm ngưng quyền truy cập nếu bạn vi phạm Điều khoản.`],
+ ["10. Luật áp dụng và liên hệ", `Điều khoản này tuân theo pháp luật Việt Nam, không ảnh hưởng tới các quyền bảo vệ người tiêu dùng bắt buộc tại quốc gia của bạn. Liên hệ: ${EMAIL}.`]]},
+ja: { name:"日本語", title:"利用規約", updated:"最終更新", privacy:"プライバシーポリシー", s:[
+ ["1. 同意", `Ly Truongが開発した${APP}（以下「本アプリ」）をダウンロードまたは利用することで、本規約に同意したものとみなします。同意しない場合はご利用をお控えください。`],
+ ["2. ライセンス", `お客様が所有または管理する端末で、個人的・非商用目的に限り、App StoreまたはGoogle Playの規約に従って本アプリを利用する、非独占的・譲渡不能・取消可能なライセンスを付与します。`],
+ ["3. アプリ内課金", `「広告を削除」は一回限りの非消耗型購入で、すべての広告を削除し全ケーキテーマを解放します。決済はAppleまたはGoogleが各社規約に基づき処理し、返金も各社が対応します。同じストアアカウントの他端末では「購入を復元」で復元できます。`],
+ ["4. 広告とリワード広告", `無料版ではGoogle AdMobの広告を表示します。一部のケーキはリワード広告を視聴すると利用でき、選択中のみ解放され、他のケーキに切り替えると再びロックされます。広告の表示は地域や同意状況により保証されません。`],
+ ["5. 禁止事項", `本アプリやそのコンテンツの複製・改変・配布・リバースエンジニアリング・再販、違法な利用、広告や購入機能への干渉を禁止します。`],
+ ["6. コンテンツと知的財産", `本アプリ、画像、ケーキデザイン、フォント、音楽はLy Truongが所有またはライセンスを受けています。入力した名前はお客様のものであり端末内に保存されます。`],
+ ["7. 免責", `本アプリは「現状有姿」で提供され、いかなる保証もありません。吹き消しの検出は端末のマイクや周囲環境に依存し、常に期待どおり動作するとは限りません。`],
+ ["8. 責任の制限", `法令の許す範囲で、Ly Truongは本アプリの利用から生じる間接的・付随的・派生的損害について責任を負いません。責任総額は過去12か月にお客様が支払った金額を上限とします。`],
+ ["9. 変更と終了", `本アプリまたは本規約は随時更新されることがあり、変更後の継続利用は同意とみなされます。規約違反時はアクセスを停止する場合があります。`],
+ ["10. 準拠法と連絡先", `本規約はベトナム法に準拠します（お住まいの国の強行的な消費者保護規定を妨げません）。連絡先: ${EMAIL}`]]},
+ko: { name:"한국어", title:"이용약관", updated:"최종 업데이트", privacy:"개인정보 처리방침", s:[
+ ["1. 동의", `Ly Truong이 개발한 ${APP}(이하 "앱")을 다운로드하거나 사용하면 본 약관에 동의하는 것입니다. 동의하지 않으면 앱을 사용하지 마세요.`],
+ ["2. 라이선스", `App Store 또는 Google Play 약관에 따라, 귀하가 소유·관리하는 기기에서 개인적·비상업적 목적으로 앱을 사용할 수 있는 비독점적·양도 불가·철회 가능한 라이선스를 부여합니다.`],
+ ["3. 인앱 구매", `"광고 제거"는 모든 광고를 제거하고 모든 케이크 테마를 해제하는 1회성 비소모성 구매입니다. 결제와 환불은 Apple 또는 Google이 자체 약관에 따라 처리합니다. 같은 스토어 계정의 다른 기기에서 "구매 복원"으로 복원할 수 있습니다.`],
+ ["4. 광고 및 보상형 광고", `무료 버전은 Google AdMob 광고를 표시합니다. 일부 케이크는 보상형 광고를 시청하면 사용할 수 있으며, 선택 중일 때만 해제되고 다른 케이크로 바꾸면 다시 잠깁니다. 광고 제공은 지역과 동의 선택에 따라 보장되지 않습니다.`],
+ ["5. 허용되는 사용", `앱 또는 콘텐츠를 복사, 수정, 배포, 역설계, 재판매하거나 불법적으로 사용하거나 광고·구매 기능을 방해할 수 없습니다.`],
+ ["6. 콘텐츠 및 지적 재산", `앱, 아트워크, 케이크 디자인, 글꼴, 음악은 Ly Truong의 소유이거나 라이선스를 받은 것입니다. 입력한 이름은 귀하의 것이며 기기에만 저장됩니다.`],
+ ["7. 면책", `앱은 어떠한 보증도 없이 "있는 그대로" 제공됩니다. 촛불 감지는 기기 마이크와 주변 환경에 따라 항상 기대대로 작동하지 않을 수 있습니다.`],
+ ["8. 책임 제한", `법이 허용하는 최대 범위에서 Ly Truong은 앱 사용으로 발생한 간접적·부수적·결과적 손해에 책임지지 않습니다. 총 책임은 최근 12개월간 귀하가 지불한 금액을 초과하지 않습니다.`],
+ ["9. 변경 및 종료", `앱이나 약관은 언제든 변경될 수 있으며, 변경 후 계속 사용하면 동의한 것으로 봅니다. 약관 위반 시 접근을 중단할 수 있습니다.`],
+ ["10. 준거법 및 문의", `본 약관은 베트남 법을 따르며, 귀하 국가의 강행 소비자 보호 규정은 영향을 받지 않습니다. 문의: ${EMAIL}`]]},
+zh: { name:"中文", title:"使用条款", updated:"最后更新", privacy:"隐私政策", s:[
+ ["1. 接受", `下载或使用由 Ly Truong 开发的 ${APP}（“本应用”）即表示您同意本条款。若不同意，请勿使用本应用。`],
+ ["2. 许可", `我们授予您个人的、非独占、不可转让、可撤销的许可，可在您拥有或控制的设备上出于个人非商业目的使用本应用，并遵守 App Store 或 Google Play 的条款。`],
+ ["3. 应用内购买", `“移除广告”为一次性非消耗型购买，可移除全部广告并解锁所有蛋糕主题。由 Apple 或 Google 按其条款处理，退款亦由其处理。在同一商店账户的其他设备上可通过“恢复购买”恢复。`],
+ ["4. 广告与激励广告", `免费版显示 Google AdMob 提供的广告。部分蛋糕主题可通过观看激励广告使用；主题在被选中期间保持解锁，切换到其他主题后重新锁定。广告的可用性不作保证，取决于您所在地区和同意选择。`],
+ ["5. 可接受的使用", `您不得复制、修改、分发、逆向工程或转售本应用及其内容，不得用于任何非法用途，也不得干扰其广告和购买机制。`],
+ ["6. 内容与知识产权", `本应用及其美术、蛋糕设计、字体和音乐归 Ly Truong 所有或获得授权。您输入的名字归您所有并仅保存在您的设备上。`],
+ ["7. 免责声明", `本应用按“现状”和“可用状态”提供，不作任何保证。蜡烛检测依赖设备麦克风和周围环境，可能并非总能如预期工作。`],
+ ["8. 责任限制", `在法律允许的最大范围内，Ly Truong 对因使用本应用产生的任何间接、附带或后果性损害不承担责任。总责任不超过您在过去 12 个月内为本应用支付的金额。`],
+ ["9. 变更与终止", `我们可随时更新本应用或本条款；变更后继续使用即表示接受。若您违反条款，我们可暂停访问。`],
+ ["10. 适用法律与联系", `本条款受越南法律管辖，不影响您所在国家的强制性消费者保护规定。联系：${EMAIL}`]]},
+es: { name:"Español", title:"Términos de uso", updated:"Última actualización", privacy:"Política de privacidad", s:[
+ ["1. Aceptación", `Al descargar o usar ${APP} («la App»), desarrollada por Ly Truong, aceptas estos Términos. Si no estás de acuerdo, no uses la App.`],
+ ["2. Licencia", `Te concedemos una licencia personal, no exclusiva, no transferible y revocable para usar la App en dispositivos que posees o controlas, con fines personales y no comerciales, conforme a los términos de App Store o Google Play.`],
+ ["3. Compra dentro de la app", `«Quitar anuncios» es una compra única y no consumible que elimina toda la publicidad y desbloquea todos los pasteles. La procesan Apple o Google según sus términos; los reembolsos los gestionan ellos. Puedes restaurarla en otros dispositivos con la misma cuenta mediante «Restaurar compras».`],
+ ["4. Publicidad y anuncios recompensados", `La versión gratuita muestra anuncios de Google AdMob. Algunos pasteles pueden usarse viendo un anuncio recompensado; el pastel permanece desbloqueado mientras esté seleccionado y se bloquea al cambiar a otro. La disponibilidad de anuncios no está garantizada.`],
+ ["5. Uso aceptable", `No puedes copiar, modificar, distribuir, descompilar ni revender la App o su contenido, usarla de forma ilegal ni interferir con sus mecanismos de anuncios y compras.`],
+ ["6. Contenido y propiedad intelectual", `La App, sus ilustraciones, diseños de pasteles, fuentes y música pertenecen a Ly Truong o están licenciados. Los nombres que introduces son tuyos y permanecen en tu dispositivo.`],
+ ["7. Exención de garantías", `La App se ofrece «tal cual» y «según disponibilidad», sin garantías. La detección del soplido depende del micrófono y del entorno y puede no funcionar siempre como se espera.`],
+ ["8. Limitación de responsabilidad", `En la medida permitida por la ley, Ly Truong no responde por daños indirectos, incidentales o consecuentes derivados del uso de la App. La responsabilidad total no excederá lo pagado por la App en los últimos 12 meses.`],
+ ["9. Cambios y terminación", `Podemos actualizar la App o estos Términos en cualquier momento; seguir usándola implica aceptarlos. Podemos suspender el acceso si incumples los Términos.`],
+ ["10. Ley aplicable y contacto", `Estos Términos se rigen por las leyes de Vietnam, sin perjuicio de las protecciones obligatorias al consumidor de tu país. Contacto: ${EMAIL}`]]},
+pt: { name:"Português", title:"Termos de Uso", updated:"Última atualização", privacy:"Política de Privacidade", s:[
+ ["1. Aceitação", `Ao baixar ou usar ${APP} («o App»), desenvolvido por Ly Truong, você concorda com estes Termos. Se não concordar, não use o App.`],
+ ["2. Licença", `Concedemos uma licença pessoal, não exclusiva, intransferível e revogável para usar o App em dispositivos que você possui ou controla, para fins pessoais e não comerciais, conforme os termos da App Store ou Google Play.`],
+ ["3. Compra no app", `«Remover anúncios» é uma compra única e não consumível que remove toda a publicidade e desbloqueia todos os bolos. É processada pela Apple ou Google segundo seus termos; reembolsos são tratados por eles. Pode ser restaurada em outros dispositivos com a mesma conta via «Restaurar compras».`],
+ ["4. Publicidade e anúncios recompensados", `A versão gratuita exibe anúncios do Google AdMob. Alguns bolos podem ser usados assistindo a um anúncio recompensado; o bolo permanece desbloqueado enquanto selecionado e bloqueia ao trocar para outro. A disponibilidade de anúncios não é garantida.`],
+ ["5. Uso aceitável", `Você não pode copiar, modificar, distribuir, fazer engenharia reversa ou revender o App ou seu conteúdo, usá-lo de forma ilegal, nem interferir nos mecanismos de anúncios e compras.`],
+ ["6. Conteúdo e propriedade intelectual", `O App, suas artes, designs de bolos, fontes e músicas pertencem a Ly Truong ou são licenciados. Os nomes que você digita são seus e ficam no seu dispositivo.`],
+ ["7. Isenção", `O App é fornecido «como está» e «conforme disponível», sem garantias. A detecção do sopro depende do microfone e do ambiente e pode nem sempre funcionar como esperado.`],
+ ["8. Limitação de responsabilidade", `Na máxima extensão permitida por lei, Ly Truong não se responsabiliza por danos indiretos, incidentais ou consequentes decorrentes do uso do App. A responsabilidade total não excederá o valor pago pelo App nos últimos 12 meses.`],
+ ["9. Alterações e rescisão", `Podemos atualizar o App ou estes Termos a qualquer momento; o uso continuado significa aceitação. Podemos suspender o acesso em caso de violação.`],
+ ["10. Lei aplicável e contato", `Estes Termos são regidos pelas leis do Vietnã, sem prejuízo das proteções obrigatórias ao consumidor do seu país. Contato: ${EMAIL}`]]},
+fr: { name:"Français", title:"Conditions d'utilisation", updated:"Dernière mise à jour", privacy:"Politique de confidentialité", s:[
+ ["1. Acceptation", `En téléchargeant ou en utilisant ${APP} (« l'App »), développée par Ly Truong, vous acceptez ces Conditions. Si vous n'êtes pas d'accord, n'utilisez pas l'App.`],
+ ["2. Licence", `Nous vous accordons une licence personnelle, non exclusive, non transférable et révocable pour utiliser l'App sur des appareils que vous possédez ou contrôlez, à des fins personnelles et non commerciales, conformément aux conditions de l'App Store ou de Google Play.`],
+ ["3. Achat intégré", `« Supprimer les pubs » est un achat unique non consommable qui supprime toute publicité et débloque tous les gâteaux. Il est traité par Apple ou Google selon leurs conditions ; les remboursements relèvent d'eux. Il peut être restauré sur d'autres appareils avec le même compte via « Restaurer les achats ».`],
+ ["4. Publicité et pubs récompensées", `La version gratuite affiche des publicités Google AdMob. Certains gâteaux peuvent être utilisés en regardant une pub récompensée ; le gâteau reste débloqué tant qu'il est sélectionné et se verrouille à nouveau si vous en changez. La disponibilité des publicités n'est pas garantie.`],
+ ["5. Utilisation acceptable", `Vous ne pouvez pas copier, modifier, distribuer, décompiler ou revendre l'App ou son contenu, l'utiliser de manière illicite, ni perturber ses mécanismes de publicité et d'achat.`],
+ ["6. Contenu et propriété intellectuelle", `L'App, ses illustrations, modèles de gâteaux, polices et musiques appartiennent à Ly Truong ou sont sous licence. Les noms que vous saisissez restent les vôtres et sur votre appareil.`],
+ ["7. Exclusion de garantie", `L'App est fournie « telle quelle » et « selon disponibilité », sans garantie. La détection du souffle dépend du micro et de l'environnement et peut ne pas toujours fonctionner comme prévu.`],
+ ["8. Limitation de responsabilité", `Dans la mesure permise par la loi, Ly Truong n'est pas responsable des dommages indirects, accessoires ou consécutifs liés à l'utilisation de l'App. La responsabilité totale n'excédera pas le montant payé pour l'App au cours des 12 derniers mois.`],
+ ["9. Modifications et résiliation", `Nous pouvons mettre à jour l'App ou ces Conditions à tout moment ; continuer à l'utiliser vaut acceptation. Nous pouvons suspendre l'accès en cas de violation.`],
+ ["10. Droit applicable et contact", `Ces Conditions sont régies par le droit vietnamien, sans préjudice des protections impératives des consommateurs de votre pays. Contact : ${EMAIL}`]]},
+de: { name:"Deutsch", title:"Nutzungsbedingungen", updated:"Zuletzt aktualisiert", privacy:"Datenschutzerklärung", s:[
+ ["1. Zustimmung", `Mit dem Herunterladen oder Nutzen von ${APP} („die App“), entwickelt von Ly Truong, stimmen Sie diesen Bedingungen zu. Andernfalls nutzen Sie die App bitte nicht.`],
+ ["2. Lizenz", `Wir gewähren Ihnen eine persönliche, nicht exklusive, nicht übertragbare und widerrufliche Lizenz zur Nutzung der App auf Geräten, die Sie besitzen oder kontrollieren, für persönliche, nicht kommerzielle Zwecke gemäß den Bedingungen des App Store bzw. Google Play.`],
+ ["3. In-App-Kauf", `„Werbung entfernen“ ist ein einmaliger, nicht verbrauchbarer Kauf, der alle Werbung entfernt und alle Torten freischaltet. Er wird von Apple oder Google nach deren Bedingungen abgewickelt; Rückerstattungen erfolgen über diese. Auf anderen Geräten mit demselben Store-Konto kann er über „Käufe wiederherstellen“ wiederhergestellt werden.`],
+ ["4. Werbung und Rewarded Ads", `Die kostenlose Version zeigt Werbung von Google AdMob. Einige Torten können durch Ansehen einer Rewarded-Werbung genutzt werden; die Torte bleibt freigeschaltet, solange sie ausgewählt ist, und wird beim Wechsel wieder gesperrt. Die Verfügbarkeit von Werbung ist nicht garantiert.`],
+ ["5. Zulässige Nutzung", `Sie dürfen die App oder ihre Inhalte nicht kopieren, verändern, verbreiten, zurückentwickeln oder weiterverkaufen, rechtswidrig nutzen oder in Werbe- und Kaufmechanismen eingreifen.`],
+ ["6. Inhalte und geistiges Eigentum", `Die App, ihre Grafiken, Tortendesigns, Schriften und Musik gehören Ly Truong oder sind lizenziert. Eingegebene Namen bleiben Ihr Eigentum und auf Ihrem Gerät.`],
+ ["7. Gewährleistungsausschluss", `Die App wird „wie besehen“ und „wie verfügbar“ ohne jegliche Gewährleistung bereitgestellt. Die Erkennung des Ausblasens hängt von Mikrofon und Umgebung ab und funktioniert nicht immer wie erwartet.`],
+ ["8. Haftungsbeschränkung", `Soweit gesetzlich zulässig haftet Ly Truong nicht für indirekte, zufällige oder Folgeschäden aus der Nutzung der App. Die Gesamthaftung übersteigt nicht den in den letzten 12 Monaten für die App gezahlten Betrag.`],
+ ["9. Änderungen und Beendigung", `Wir können die App oder diese Bedingungen jederzeit aktualisieren; die weitere Nutzung gilt als Zustimmung. Bei Verstößen können wir den Zugang sperren.`],
+ ["10. Anwendbares Recht und Kontakt", `Es gilt vietnamesisches Recht, unbeschadet zwingender Verbraucherschutzrechte Ihres Landes. Kontakt: ${EMAIL}`]]},
+ru: { name:"Русский", title:"Условия использования", updated:"Обновлено", privacy:"Политика конфиденциальности", s:[
+ ["1. Принятие", `Загружая или используя ${APP} («Приложение»), разработанное Ly Truong, вы соглашаетесь с настоящими Условиями. Если вы не согласны, не используйте Приложение.`],
+ ["2. Лицензия", `Мы предоставляем вам личную, неисключительную, непередаваемую и отзывную лицензию на использование Приложения на принадлежащих вам устройствах в личных некоммерческих целях в соответствии с условиями App Store или Google Play.`],
+ ["3. Покупка в приложении", `«Убрать рекламу» — разовая непотребляемая покупка, отключающая всю рекламу и открывающая все торты. Её обрабатывают Apple или Google по своим условиям; возвраты — через них. Восстановить можно на других устройствах с тем же аккаунтом через «Восстановить покупки».`],
+ ["4. Реклама и реклама с вознаграждением", `Бесплатная версия показывает рекламу Google AdMob. Некоторые торты можно использовать, посмотрев рекламу с вознаграждением; торт остаётся открытым, пока выбран, и закрывается при переключении. Доступность рекламы не гарантируется.`],
+ ["5. Допустимое использование", `Запрещается копировать, изменять, распространять, декомпилировать или перепродавать Приложение и его контент, использовать его незаконно или вмешиваться в механизмы рекламы и покупок.`],
+ ["6. Контент и интеллектуальная собственность", `Приложение, графика, дизайны тортов, шрифты и музыка принадлежат Ly Truong или лицензированы. Введённые имена остаются вашими и хранятся на устройстве.`],
+ ["7. Отказ от гарантий", `Приложение предоставляется «как есть» без каких-либо гарантий. Распознавание выдоха зависит от микрофона и окружения и может работать не всегда.`],
+ ["8. Ограничение ответственности", `В пределах, допускаемых законом, Ly Truong не несёт ответственности за косвенные, случайные или последующие убытки. Общая ответственность не превышает сумму, уплаченную за Приложение за последние 12 месяцев.`],
+ ["9. Изменения и прекращение", `Мы можем обновлять Приложение или Условия в любое время; продолжение использования означает согласие. При нарушении доступ может быть приостановлен.`],
+ ["10. Применимое право и контакты", `Условия регулируются законодательством Вьетнама без ущерба для обязательных норм защиты потребителей вашей страны. Контакт: ${EMAIL}`]]},
+id: { name:"Bahasa Indonesia", title:"Ketentuan Penggunaan", updated:"Terakhir diperbarui", privacy:"Kebijakan Privasi", s:[
+ ["1. Penerimaan", `Dengan mengunduh atau menggunakan ${APP} ("Aplikasi") yang dikembangkan Ly Truong, Anda menyetujui Ketentuan ini. Jika tidak setuju, jangan gunakan Aplikasi.`],
+ ["2. Lisensi", `Kami memberi Anda lisensi pribadi, non-eksklusif, tidak dapat dipindahtangankan, dan dapat dicabut untuk menggunakan Aplikasi di perangkat milik Anda untuk tujuan pribadi non-komersial sesuai ketentuan App Store atau Google Play.`],
+ ["3. Pembelian dalam aplikasi", `"Hapus Iklan" adalah pembelian sekali bayar non-konsumsi yang menghapus semua iklan dan membuka semua kue. Diproses oleh Apple atau Google sesuai ketentuan mereka; pengembalian dana ditangani mereka. Dapat dipulihkan di perangkat lain dengan akun yang sama lewat "Pulihkan pembelian".`],
+ ["4. Iklan dan iklan berhadiah", `Versi gratis menampilkan iklan Google AdMob. Beberapa kue dapat dipakai dengan menonton iklan berhadiah; kue tetap terbuka selama dipilih dan terkunci lagi saat Anda berganti kue. Ketersediaan iklan tidak dijamin.`],
+ ["5. Penggunaan yang wajar", `Anda tidak boleh menyalin, mengubah, mendistribusikan, merekayasa balik, atau menjual kembali Aplikasi atau kontennya, menggunakannya secara ilegal, atau mengganggu mekanisme iklan dan pembelian.`],
+ ["6. Konten dan kekayaan intelektual", `Aplikasi, karya seni, desain kue, font, dan musik dimiliki atau dilisensikan kepada Ly Truong. Nama yang Anda masukkan tetap milik Anda dan tersimpan di perangkat.`],
+ ["7. Penafian", `Aplikasi disediakan "sebagaimana adanya" tanpa jaminan apa pun. Deteksi tiupan bergantung pada mikrofon dan lingkungan sehingga mungkin tidak selalu berfungsi seperti yang diharapkan.`],
+ ["8. Batasan tanggung jawab", `Sejauh diizinkan hukum, Ly Truong tidak bertanggung jawab atas kerugian tidak langsung, insidental, atau konsekuensial dari penggunaan Aplikasi. Total tanggung jawab tidak melebihi jumlah yang Anda bayar dalam 12 bulan terakhir.`],
+ ["9. Perubahan dan penghentian", `Kami dapat memperbarui Aplikasi atau Ketentuan ini kapan saja; penggunaan berlanjut berarti menerima. Kami dapat menangguhkan akses jika Anda melanggar Ketentuan.`],
+ ["10. Hukum yang berlaku dan kontak", `Ketentuan ini diatur oleh hukum Vietnam tanpa mengurangi perlindungan konsumen wajib di negara Anda. Kontak: ${EMAIL}`]]},
+th: { name:"ไทย", title:"ข้อกำหนดการใช้งาน", updated:"อัปเดตล่าสุด", privacy:"นโยบายความเป็นส่วนตัว", s:[
+ ["1. การยอมรับ", `การดาวน์โหลดหรือใช้ ${APP} ("แอป") ที่พัฒนาโดย Ly Truong ถือว่าคุณยอมรับข้อกำหนดนี้ หากไม่ยอมรับ โปรดอย่าใช้แอป`],
+ ["2. สิทธิ์การใช้งาน", `เราให้สิทธิ์ส่วนบุคคล ไม่ผูกขาด ไม่สามารถถ่ายโอน และเพิกถอนได้ ในการใช้แอปบนอุปกรณ์ที่คุณเป็นเจ้าของหรือควบคุม เพื่อวัตถุประสงค์ส่วนตัวที่ไม่ใช่เชิงพาณิชย์ ตามข้อกำหนดของ App Store หรือ Google Play`],
+ ["3. การซื้อในแอป", `"ลบโฆษณา" เป็นการซื้อครั้งเดียวแบบไม่สิ้นเปลือง ลบโฆษณาทั้งหมดและปลดล็อกเค้กทุกแบบ ดำเนินการโดย Apple หรือ Google ตามข้อกำหนดของพวกเขา การคืนเงินจัดการโดยพวกเขา สามารถกู้คืนบนอุปกรณ์อื่นที่ใช้บัญชีเดียวกันด้วย "กู้คืนการซื้อ"`],
+ ["4. โฆษณาและโฆษณาแบบมีรางวัล", `เวอร์ชันฟรีแสดงโฆษณาจาก Google AdMob เค้กบางแบบใช้ได้โดยดูโฆษณาแบบมีรางวัล เค้กจะปลดล็อกขณะถูกเลือกและล็อกอีกครั้งเมื่อเปลี่ยนไปใช้แบบอื่น ไม่รับประกันว่าจะมีโฆษณาเสมอ`],
+ ["5. การใช้งานที่ยอมรับได้", `ห้ามคัดลอก แก้ไข แจกจ่าย ทำวิศวกรรมย้อนกลับ หรือขายต่อแอปหรือเนื้อหา ห้ามใช้ในทางที่ผิดกฎหมาย หรือแทรกแซงกลไกโฆษณาและการซื้อ`],
+ ["6. เนื้อหาและทรัพย์สินทางปัญญา", `แอป ภาพ ดีไซน์เค้ก ฟอนต์ และเพลง เป็นของ Ly Truong หรือได้รับอนุญาต ชื่อที่คุณกรอกเป็นของคุณและอยู่ในอุปกรณ์ของคุณ`],
+ ["7. ข้อจำกัดความรับผิดชอบ", `แอปให้บริการ "ตามที่เป็น" โดยไม่มีการรับประกันใด ๆ การตรวจจับการเป่าเทียนขึ้นอยู่กับไมโครโฟนและสภาพแวดล้อม อาจไม่ทำงานตามที่คาดหวังเสมอ`],
+ ["8. ข้อจำกัดความรับผิด", `ภายในขอบเขตที่กฎหมายอนุญาต Ly Truong ไม่รับผิดต่อความเสียหายทางอ้อม อุบัติเหตุ หรือผลสืบเนื่องจากการใช้แอป ความรับผิดรวมไม่เกินจำนวนที่คุณจ่ายสำหรับแอปใน 12 เดือนล่าสุด`],
+ ["9. การเปลี่ยนแปลงและการยุติ", `เราอาจอัปเดตแอปหรือข้อกำหนดได้ทุกเมื่อ การใช้งานต่อถือว่ายอมรับ เราอาจระงับการเข้าถึงหากคุณละเมิดข้อกำหนด`],
+ ["10. กฎหมายที่ใช้บังคับและการติดต่อ", `ข้อกำหนดนี้อยู่ภายใต้กฎหมายเวียดนาม โดยไม่กระทบสิทธิ์คุ้มครองผู้บริโภคตามกฎหมายในประเทศของคุณ ติดต่อ: ${EMAIL}`]]},
+};
+function pickLang() {
+  const q = new URLSearchParams(location.search).get("lang");
+  const cands = [q, ...(navigator.languages || [navigator.language])].filter(Boolean);
+  for (const c of cands) { const k = c.toLowerCase().split(/[-_]/)[0]; if (T[k]) return k; }
+  return "en";
+}
+function render(k) {
+  const t = T[k]; document.documentElement.lang = k;
+  document.documentElement.dir = ["ar","he","fa","ur"].includes(k) ? "rtl" : "ltr";
+  document.title = t.title + " – " + APP;
+  document.getElementById("title").textContent = t.title;
+  document.getElementById("meta").textContent = `${APP} · ${t.updated}: ${UPDATED}`;
+  document.getElementById("privacy-link").textContent = t.privacy;
+  document.getElementById("privacy-link").href = "privacy.html?lang=" + k;
+  document.getElementById("content").innerHTML = t.s.map(([h,p]) => `<section><h2>${h}</h2><p>${p}</p></section>`).join("");
+  document.getElementById("lang").value = k;
+}
+const sel = document.getElementById("lang");
+for (const k of Object.keys(T)) { const o = document.createElement("option"); o.value = k; o.textContent = T[k].name; sel.appendChild(o); }
+sel.addEventListener("change", e => { render(e.target.value); history.replaceState(null, "", "?lang=" + e.target.value); });
+render(pickLang());
+</script>
+</body>
+</html>
